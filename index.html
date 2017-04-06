@@ -291,7 +291,13 @@
         <h1 id="一、申请新的Repository"><a href="#一、申请新的Repository" class="headerlink" title="一、申请新的Repository"></a>一、申请新的Repository</h1><ul>
 <li>确保仓库名和用户名一致</li>
 <li>确保已同步ssh<h1 id="二、配置本地Hexo"><a href="#二、配置本地Hexo" class="headerlink" title="二、配置本地Hexo"></a>二、配置本地Hexo</h1></li>
-<li>编辑本地Hexo根目录下的 <strong>_comfig.yml</strong>文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">  deploy:</div><div class="line">    type: git</div><div class="line">    repository: http://github.com/YourName/YourName.github.io.git</div><div class="line">    branch: master</div><div class="line">  ```    </div><div class="line">   </div><div class="line"></div><div class="line">  &lt;font color=red &gt;注意，type: repository: branch: 前面有两个空格，冒号后面都有一个空格。&lt;/font&gt;  </div><div class="line"># 三、部署到Github</div><div class="line">- 切换到hexo根目录  </div><div class="line">- 执行命令  </div><div class="line">```hexo</div><div class="line">hexo generate  </div><div class="line">hexo deploy</div></pre></td></tr></table></figure>
+<li>编辑本地Hexo根目录下的 <strong>_comfig.yml</strong>文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repository: http://github.com/YourName/YourName.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><font color="red">注意，type: repository: branch: 前面有两个空格，冒号后面都有一个空格。</font>  </p>
+<h1 id="三、部署到Github"><a href="#三、部署到Github" class="headerlink" title="三、部署到Github"></a>三、部署到Github</h1><ul>
+<li>切换到hexo根目录  </li>
+<li>执行命令  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo generate  </div><div class="line">hexo deploy</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>最后提示：<em>INFO  Deploy done: git</em>，部署成功，访问<a href="https://YourName.github.io/即可。" target="_blank" rel="external">https://YourName.github.io/即可。</a></p>
