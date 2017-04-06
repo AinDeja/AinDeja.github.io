@@ -15,17 +15,17 @@
 
 
 
-<meta name="description" content="第一步：安装node.jsnode.js下载地址：http://nodejs.cn/download/找到自己系统对应的安装版本，下载安装。安装成功后，win+r：cmd进入控制台，进行测试123C:\Users\Administrator&amp;gt;node&amp;gt;console.log(&amp;quot;Hello,Hexo!&amp;quot;);Hello,Hexo! 至此，node.js安装成功。   第">
+<meta name="description" content="一、申请新的Repository 确保仓库名和用户名一致 确保已同步ssh二、配置本地Hexo 编辑本地Hexo根目录下的 _comfig.yml文件123456789101112  deploy:    type: git    repository: http://github.com/YourName/YourName.github.io.git    branch: master  ```">
 <meta name="keywords">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo安装教程">
-<meta property="og:url" content="http://yoursite.com/2017/04/04/安装Hexo详细教程/index.html">
+<meta property="og:title" content="AinDeja‘Blog">
+<meta property="og:url" content="http://yoursite.com/2017/04/06/将Hexo部署到Github/index.html">
 <meta property="og:site_name" content="AinDeja‘Blog">
-<meta property="og:description" content="第一步：安装node.jsnode.js下载地址：http://nodejs.cn/download/找到自己系统对应的安装版本，下载安装。安装成功后，win+r：cmd进入控制台，进行测试123C:\Users\Administrator&amp;gt;node&amp;gt;console.log(&amp;quot;Hello,Hexo!&amp;quot;);Hello,Hexo! 至此，node.js安装成功。   第">
-<meta property="og:updated_time" content="2017-04-04T16:01:34.739Z">
+<meta property="og:description" content="一、申请新的Repository 确保仓库名和用户名一致 确保已同步ssh二、配置本地Hexo 编辑本地Hexo根目录下的 _comfig.yml文件123456789101112  deploy:    type: git    repository: http://github.com/YourName/YourName.github.io.git    branch: master  ```">
+<meta property="og:updated_time" content="2017-04-06T08:28:44.861Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo安装教程">
-<meta name="twitter:description" content="第一步：安装node.jsnode.js下载地址：http://nodejs.cn/download/找到自己系统对应的安装版本，下载安装。安装成功后，win+r：cmd进入控制台，进行测试123C:\Users\Administrator&amp;gt;node&amp;gt;console.log(&amp;quot;Hello,Hexo!&amp;quot;);Hello,Hexo! 至此，node.js安装成功。   第">
+<meta name="twitter:title" content="AinDeja‘Blog">
+<meta name="twitter:description" content="一、申请新的Repository 确保仓库名和用户名一致 确保已同步ssh二、配置本地Hexo 编辑本地Hexo根目录下的 _comfig.yml文件123456789101112  deploy:    type: git    repository: http://github.com/YourName/YourName.github.io.git    branch: master  ```">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -57,7 +57,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Hexo安装教程 | AinDeja‘Blog</title>
+<title>AinDeja‘Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -257,11 +257,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-安装Hexo详细教程" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-将Hexo部署到Github" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/04/04/安装Hexo详细教程/" class="article-date">
-      <time datetime="2017-04-04T11:06:11.235Z" itemprop="datePublished">2017-04-04</time>
+      <a href="/2017/04/06/将Hexo部署到Github/" class="article-date">
+      <time datetime="2017-04-06T08:28:57.664Z" itemprop="datePublished">2017-04-06</time>
 </a>
 
 
@@ -272,58 +272,17 @@
       <input type="hidden" class="isFancy" />
     
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Hexo安装教程
-    </h1>
-  
-
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-
-        
-        <div class="clearfix"></div>
-      </div>
-      
-    
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="第一步：安装node-js"><a href="#第一步：安装node-js" class="headerlink" title="第一步：安装node.js"></a><strong>第一步：安装node.js</strong></h1><p>node.js下载地址：<a href="http://nodejs.cn/download/" target="_blank" rel="external">http://nodejs.cn/download/</a><br>找到自己系统对应的安装版本，下载安装。<br>安装成功后，win+r：cmd进入控制台，进行测试<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">C:\Users\Administrator&gt;node</div><div class="line">&gt;console.log(&quot;Hello,Hexo!&quot;);</div><div class="line">Hello,Hexo!</div></pre></td></tr></table></figure></p>
-<p>至此，node.js安装成功。  </p>
-<h1 id="第二步：安装git"><a href="#第二步：安装git" class="headerlink" title="第二步：安装git"></a><strong>第二步：安装git</strong></h1><p>1、申请Github帐号：<a href="https://github.com/join?source=header-home" target="_blank" rel="external">https://github.com/join?source=header-home</a><br>2、下载并安装git：<a href="https://git-scm.com/downloads/" target="_blank" rel="external">https://git-scm.com/downloads/</a><br>3、配置ssh：  </p>
-<ul>
-<li>打开git bash，设置user.name和user.email  </li>
-<li>git config –global user.name “你的GitHub用户名”  </li>
-<li><p>git config –global user.email “你的GitHub注册邮箱”</p>
-</li>
-<li><p>生成ssh密匙</p>
-</li>
-<li>ssh-keygen -t rsa -C “你的GitHub注册邮箱”</li>
-<li>此时会在.ssh中会出现密钥文件==id_rsa==和==id_rsa.pub==</li>
-</ul>
-<p>4、将公钥添加到github上  </p>
-<ul>
-<li>用户头像→Settings→SSH and GPG keys→New SSH key→将id_rsa.pub中的内容复制到Key文本框中，然后点击Add SSH key(添加SSH)按钮。</li>
-</ul>
-<h1 id="第三步：安装Hexo"><a href="#第三步：安装Hexo" class="headerlink" title="第三步：安装Hexo"></a><strong>第三步：安装Hexo</strong></h1><ul>
-<li>更改npm源，防止默认镜像速度过慢</li>
-<li><p>npm config set registry “<a href="https://registry.npm.taobao.org" target="_blank" rel="external">https://registry.npm.taobao.org</a>“</p>
-</li>
-<li><p>执行以下命令安装hexo。</p>
+        <h1 id="一、申请新的Repository"><a href="#一、申请新的Repository" class="headerlink" title="一、申请新的Repository"></a>一、申请新的Repository</h1><ul>
+<li>确保仓库名和用户名一致</li>
+<li>确保已同步ssh<h1 id="二、配置本地Hexo"><a href="#二、配置本地Hexo" class="headerlink" title="二、配置本地Hexo"></a>二、配置本地Hexo</h1></li>
+<li>编辑本地Hexo根目录下的 <strong>_comfig.yml</strong>文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">  deploy:</div><div class="line">    type: git</div><div class="line">    repository: http://github.com/YourName/YourName.github.io.git</div><div class="line">    branch: master</div><div class="line">  ```  </div><div class="line">  &lt;font color=red &gt;注意，type: repository: branch: 前面有两个空格，冒号后面都有一个空格。&lt;/font&gt;  </div><div class="line"># 三、部署到Github</div><div class="line">- 切换到hexo根目录  </div><div class="line">- 执行命令  </div><div class="line">```hexo</div><div class="line">hexo generate  </div><div class="line">hexo deploy</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">安装命令</div><div class="line"># 安装hexo</div><div class="line">npm install hexo-cli g</div><div class="line"># 初始化博客文件夹</div><div class="line">hexo init blog</div><div class="line"># 切换到该路径</div><div class="line">cd blog</div><div class="line"># 安装hexo的扩展插件</div><div class="line">npm install</div><div class="line"># 安装其它插件</div><div class="line">npm install hexo-server --save</div><div class="line">npm install hexo-admin --save</div><div class="line">npm install hexo-generator-archive --save</div><div class="line">npm install hexo-generator-feed --save</div><div class="line">npm install hexo-generator-search --save</div><div class="line">npm install hexo-generator-tag --save</div><div class="line">npm install hexo-deployer-git --save</div><div class="line">npm install hexo-generator-sitemap --save</div></pre></td></tr></table></figure>
-<h1 id="初探hexo"><a href="#初探hexo" class="headerlink" title="初探hexo"></a>初探hexo</h1><pre><code>第一次使用hexo，在本地创建服务器使用。
-# 生成静态页面
-hexo generate
-# 开启本地服务器
-hexo s
-</code></pre><p>打开浏览器，地址栏中输入：<a href="http://localhost:4000/,应该可以看见刚刚创建的博客了。" target="_blank" rel="external">http://localhost:4000/,应该可以看见刚刚创建的博客了。</a><br>问题：为什么访问<a href="http://localhost:4000/，无反应？" target="_blank" rel="external">http://localhost:4000/，无反应？</a><br>解决方法：可能是由于端口问题引起的。使用Ctrl+C中断本地服务，使用命令hexo s -p 5000重新开启本地服务，访问<a href="http://localhost:5000/可以看到博客页面了。" target="_blank" rel="external">http://localhost:5000/可以看到博客页面了。</a><br>将hexo博客部署到github上</p>
+<p>最后提示：<em>INFO  Deploy done: git</em>，部署成功，访问<a href="https://YourName.github.io/即可。" target="_blank" rel="external">https://YourName.github.io/即可。</a></p>
+<h3 id="报错解决"><a href="#报错解决" class="headerlink" title="报错解决"></a>报错解决</h3><p>若执行hexo命令报错，一般为SSH未成功设置，重新配置SSH即可。<br>若提示<code>ERROR Deployer not found: git</code>则表示未创建<code>hexo-deployer-git</code>依赖包。执行<code>npm install hexo-deployer-git --save</code>创建依赖包，重新部署即可。</p>
 
       
     </div>
@@ -332,13 +291,13 @@ hexo s
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/04/04/安装Hexo详细教程/">Hexo安装教程</a></p>
+        <p><span>本文标题:</span><a href="/2017/04/06/将Hexo部署到Github/"></a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">AinDeja</a></p>
-        <p><span>发布时间:</span>2017-04-04, 19:06:11</p>
-        <p><span>最后更新:</span>2017-04-05, 00:01:34</p>
+        <p><span>发布时间:</span>2017-04-06, 16:28:57</p>
+        <p><span>最后更新:</span>2017-04-06, 16:28:44</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/04/04/安装Hexo详细教程/" title="Hexo安装教程">http://yoursite.com/2017/04/04/安装Hexo详细教程/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/04/04/安装Hexo详细教程/　　作者: AinDeja" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/04/06/将Hexo部署到Github/" title="">http://yoursite.com/2017/04/06/将Hexo部署到Github/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/04/06/将Hexo部署到Github/　　作者: AinDeja" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -351,17 +310,11 @@ hexo s
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/04/04/about-hexo-install/">
-                    
+                <a href="/2017/04/04/安装Hexo详细教程/">
+                    Hexo安装教程
                 </a>
             </div>
         
-        
-            <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/04/06/将Hexo部署到Github/">
-                    
-                </a>
-            </div>
         
     </nav>
 
@@ -371,7 +324,7 @@ hexo s
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#第一步：安装node-js"><span class="toc-number">1.</span> <span class="toc-text">第一步：安装node.js</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第二步：安装git"><span class="toc-number">2.</span> <span class="toc-text">第二步：安装git</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第三步：安装Hexo"><span class="toc-number">3.</span> <span class="toc-text">第三步：安装Hexo</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#初探hexo"><span class="toc-number">4.</span> <span class="toc-text">初探hexo</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、申请新的Repository"><span class="toc-number">1.</span> <span class="toc-text">一、申请新的Repository</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、配置本地Hexo"><span class="toc-number">2.</span> <span class="toc-text">二、配置本地Hexo</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#报错解决"><span class="toc-number">2.0.1.</span> <span class="toc-text">报错解决</span></a></li></ol></li></ol></li></ol>
         
     </div>
     <style>
@@ -407,7 +360,7 @@ hexo s
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Hexo安装教程　| AinDeja‘Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"　| AinDeja‘Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -427,7 +380,7 @@ hexo s
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/04/04/about-hexo-install/" title="上一篇: ">
+            <a href="/2017/04/04/安装Hexo详细教程/" title="上一篇: Hexo安装教程">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -435,9 +388,7 @@ hexo s
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/04/06/将Hexo部署到Github/" title="下一篇: ">
-                <i class="fa fa-angle-right"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
     </div>
 

@@ -259,6 +259,58 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-将Hexo部署到Github" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/04/06/将Hexo部署到Github/" class="article-date">
+      <time datetime="2017-04-06T08:28:57.664Z" itemprop="datePublished">2017-04-06</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="一、申请新的Repository"><a href="#一、申请新的Repository" class="headerlink" title="一、申请新的Repository"></a>一、申请新的Repository</h1><ul>
+<li>确保仓库名和用户名一致</li>
+<li>确保已同步ssh<h1 id="二、配置本地Hexo"><a href="#二、配置本地Hexo" class="headerlink" title="二、配置本地Hexo"></a>二、配置本地Hexo</h1></li>
+<li>编辑本地Hexo根目录下的 <strong>_comfig.yml</strong>文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">  deploy:</div><div class="line">    type: git</div><div class="line">    repository: http://github.com/YourName/YourName.github.io.git</div><div class="line">    branch: master</div><div class="line">  ```  </div><div class="line">  &lt;font color=red &gt;注意，type: repository: branch: 前面有两个空格，冒号后面都有一个空格。&lt;/font&gt;  </div><div class="line"># 三、部署到Github</div><div class="line">- 切换到hexo根目录  </div><div class="line">- 执行命令  </div><div class="line">```hexo</div><div class="line">hexo generate  </div><div class="line">hexo deploy</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>最后提示：<em>INFO  Deploy done: git</em>，部署成功，访问<a href="https://YourName.github.io/即可。" target="_blank" rel="external">https://YourName.github.io/即可。</a></p>
+<h3 id="报错解决"><a href="#报错解决" class="headerlink" title="报错解决"></a>报错解决</h3><p>若执行hexo命令报错，一般为SSH未成功设置，重新配置SSH即可。<br>若提示<code>ERROR Deployer not found: git</code>则表示未创建<code>hexo-deployer-git</code>依赖包。执行<code>npm install hexo-deployer-git --save</code>创建依赖包，重新部署即可。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-安装Hexo详细教程" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
