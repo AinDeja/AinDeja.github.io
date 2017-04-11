@@ -69,7 +69,7 @@
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
-        search: undefined
+        search: true
     }
 </script>
 
@@ -103,6 +103,13 @@
 
         
 
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="true" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
         
 
 
@@ -176,7 +183,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/安装/">安装</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/部署/">部署</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/配置/">配置</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/安装/">安装</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算/">计算</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件成本/">软件成本</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/部署/">部署</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/配置/">配置</a></li></ul>
                     </div>
                 </section>
                 
@@ -200,8 +207,10 @@
                     <div id="js-aboutme">学习本无底,前进莫徬徨</div>
                 </section>
                 
+				
             </div>
         </div>
+	
     </header>                
 </div>
     </div>
@@ -302,12 +311,12 @@
     <!-- Tag Cloud Page -->
     <hr>
 <br>
-<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HEXO/">HEXO</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a><span class="category-list-count">1</span></li></ul>
+<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HEXO/">HEXO</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件项目管理/">软件项目管理</a><span class="category-list-count">1</span></li></ul>
 
 <p class="count"></p>
 
 <div class="tags">
-    <a href="/tags/Hexo/" style="font-size: 35px; color: #000">Hexo</a> <a href="/tags/Markdown/" style="font-size: 16px; color: #808080">Markdown</a> <a href="/tags/安装/" style="font-size: 16px; color: #808080">安装</a> <a href="/tags/笔记/" style="font-size: 16px; color: #808080">笔记</a> <a href="/tags/部署/" style="font-size: 16px; color: #808080">部署</a> <a href="/tags/配置/" style="font-size: 16px; color: #808080">配置</a>
+    <a href="/tags/Hexo/" style="font-size: 35px; color: #000">Hexo</a> <a href="/tags/Markdown/" style="font-size: 16px; color: #808080">Markdown</a> <a href="/tags/安装/" style="font-size: 16px; color: #808080">安装</a> <a href="/tags/笔记/" style="font-size: 16px; color: #808080">笔记</a> <a href="/tags/计算/" style="font-size: 16px; color: #808080">计算</a> <a href="/tags/软件成本/" style="font-size: 16px; color: #808080">软件成本</a> <a href="/tags/部署/" style="font-size: 16px; color: #808080">部署</a> <a href="/tags/配置/" style="font-size: 16px; color: #808080">配置</a>
 </div>
 <style>
     .category-list li{

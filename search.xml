@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+    
+    <entry>
+      <title><![CDATA[软件成本估算]]></title>
+      <url>/2017/04/10/%E8%BD%AF%E4%BB%B6%E6%88%90%E6%9C%AC%E4%BC%B0%E7%AE%97/</url>
+      <content type="html"><![CDATA[<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><blockquote>
+<p>要进行成本控制，首先要进行成本估算。  </p>
+</blockquote>
+<p>&ensp;&ensp;&ensp;&ensp;估算：是指通过预测构造软件项目所需要的工作量的过程。  </p>
+<blockquote>
+<p>估算进行越早，意义越大。估算进行越晚， 精度越高。</p>
+</blockquote>
+<p>&ensp;&ensp;&ensp;&ensp;估算的基础：</p>
+<ul>
+<li>历史数据<blockquote>
+<p>在参考历史数据时需要考虑不同的环境。如编程语言，软件工具，复杂程度，标准和人员的经验。</p>
+</blockquote>
+</li>
+<li>工作度量<blockquote>
+<p>直接计算真正的成本或时间是不可能的。编写相同的程序，不同的人将有显著的区别。<br>通常将工作量表达为如源代码的数量（LOC），或者千行代码量（KLOC）；或表达为功能点数（FP）。</p>
+</blockquote>
+</li>
+<li>复杂性<blockquote>
+<p>相同KLOC的两个程序花费的时间将会不同，要根据复杂性进行修正，但是复杂性的度量通常是主观的</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="软件成本估算技术"><a href="#软件成本估算技术" class="headerlink" title="软件成本估算技术"></a>软件成本估算技术</h1><p>&ensp;&ensp;&ensp;&ensp;软件规模是软件成本的主要因素，对软件规模的估计要从软件的分解开始。软件项目的设计有一个分层结构，这一分层结构就对应着工作分解结构（WBS）。如下图：<br><img src="/2017/04/10/软件成本估算/WBS.png" alt="WBS工作分解结构">  </p>
+<ul>
+<li>软件<code>规模</code>估算技术：<code>代码行（LOC）</code>、<code>功能点（FP）</code>、<code>计划评审技术（PERT）</code>。  </li>
+<li>软件<code>成本</code>估算技术：类比、自顶向下、自底向上、专家判定、算法模型。  </li>
+<li>常用成本估算模型：<code>COCOMO模型</code>、<code>COCOMOⅡ模型</code>和<code>Putnam模型</code>。  </li>
+</ul>
+<h2 id="代码行估算（LOC）"><a href="#代码行估算（LOC）" class="headerlink" title="代码行估算（LOC）"></a>代码行估算（LOC）</h2><p>&ensp;&ensp;&ensp;&ensp;代码行（LOC）估算是最基本、最简单的软件规模估算方法，应用较普遍。LOC分为<code>无注释的源代码行</code>（NCLOC）和<code>注释的源代码行</code>（CLOC）。<br>        LOC=NCLOC+CLOC  </p>
+<blockquote>
+<p>由于LOC单位比较小，在实际工作也常常使用KLOC（千代码行）来表示程序的长度。    </p>
+</blockquote>
+<h2 id="功能点方法（FP）"><a href="#功能点方法（FP）" class="headerlink" title="功能点方法（FP）"></a>功能点方法（FP）</h2><p>&ensp;&ensp;&ensp;&ensp;功能点方法（FP）是在需求分析阶段基于系统功能的一种规模估计方法，基本思想是：通过研究初始应用需求来确定各种<code>输入</code>、<code>输出</code>、<code>查询</code>、<code>外部文件</code>和<code>内部文件</code>的<code>数量</code>和<code>特性</code>，从而计算出<code>功能点</code>。<br>&ensp;&ensp;&ensp;&ensp;常用情况：<br>1.估计新的软件开发项目<br>2.应用软件包括很多输入输出或文件活动<br>3.拥有经验丰富的FP估算专家<br>4.拥有充分的数据资料，可以相当准确地将FP转化为LOC。<br>        FP=UFC*TCF</p>
+<blockquote>
+<p>UFC:未调整功能点数。TCF：技术复杂度因子<br>        UFC=功能项的加权和<br>功能项：<code>输入</code>、<code>输出</code>、<code>查询</code>、<code>外部文件</code>和<code>内部文件</code>。  </p>
+</blockquote>
+<p><img src="/2017/04/10/软件成本估算/功能项权重.png" alt="WBS工作分解结构">  </p>
+<pre><code>TCF＝0.65*0.01(SUM（Ai）)  
+</code></pre><blockquote>
+<p>TCF的取值范围为0.65~1.35，分别对应着组成部分Ai都取值0到5  </p>
+</blockquote>
+<h2 id="PERT估计"><a href="#PERT估计" class="headerlink" title="PERT估计"></a>PERT估计</h2><pre><code>E＝（A+B）／2  
+</code></pre><blockquote>
+<p>A软件可能的最低规。B软件可能的最大规模。</p>
+</blockquote>
+<h2 id="COCOMO模型"><a href="#COCOMO模型" class="headerlink" title="COCOMO模型"></a>COCOMO模型</h2><pre><code>E＝aS^b*EAF. 
+</code></pre><blockquote>
+<p>E是以人为单位的工作量。S是以KLOC计数的程序规模。EAF是一个工作量调整因子，在基本模型中取值1  </p>
+</blockquote>
+<h2 id="Putnam模型"><a href="#Putnam模型" class="headerlink" title="Putnam模型"></a>Putnam模型</h2><pre><code>S＝C×E^(1/3)×t^（4／3）
+</code></pre><blockquote>
+<p>S是以LOC为单位的源代码行数，C是技术因子，E是以人年为单位的工作量，t是以年为单位的耗费时间（直到产品交付所用的时间）。  </p>
+</blockquote>
+<pre><code>C=S/(E^(1/3)×t^（4/3）)   
+</code></pre><h1 id="赢得值分析法"><a href="#赢得值分析法" class="headerlink" title="赢得值分析法"></a>赢得值分析法</h1><blockquote>
+<p>赢得值（Earned Value，也称挣值或盈余值）分析法是一种全面衡量项目成本，进度的整体方法，以资金已经转化为项目成果的量来衡量，是一种完整和有效的项目监控指标和方法。  </p>
+</blockquote>
+<h2 id="项目预算和计划"><a href="#项目预算和计划" class="headerlink" title="项目预算和计划"></a>项目预算和计划</h2><h2 id="收集实际成本"><a href="#收集实际成本" class="headerlink" title="收集实际成本"></a>收集实际成本</h2><h2 id="计算赢得值"><a href="#计算赢得值" class="headerlink" title="计算赢得值"></a>计算赢得值</h2><h2 id="成本／进度绩效"><a href="#成本／进度绩效" class="headerlink" title="成本／进度绩效"></a>成本／进度绩效</h2><h2 id="成本／进度控制"><a href="#成本／进度控制" class="headerlink" title="成本／进度控制"></a>成本／进度控制</h2>]]></content>
+      
+        <categories>
+            
+            <category> 软件项目管理 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 软件成本 </tag>
+            
+            <tag> 计算 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Markdown编写笔记]]></title>
+      <url>/2017/04/07/Markdown%E7%BC%96%E5%86%99%E7%AC%94%E8%AE%B0/</url>
+      <content type="html"><![CDATA[<h1 id="Markdown语法格式"><a href="#Markdown语法格式" class="headerlink" title="Markdown语法格式"></a>Markdown语法格式</h1><h2 id="一、标题"><a href="#一、标题" class="headerlink" title="一、标题"></a>一、标题</h2><p><font color="red">语法格式：</font><br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="section"># 一级标题</span></div><div class="line"><span class="section">## 二级标题</span></div><div class="line"><span class="section">### 三级标题</span></div><div class="line"><span class="section">#### 四级标题</span></div><div class="line"><span class="section">##### 五级标题</span></div><div class="line"><span class="section">###### 六级标题</span></div><div class="line">一级标题</div><div class="line">===========  </div><div class="line"><span class="section">二级标题</span></div><div class="line">-----------</div></pre></td></tr></table></figure></p>
+<p><font color="blue">显示效果：</font><br>&lt;不同的主题样式可能显示效果有所不同&gt;<br><a id="more"></a><br><img src="/2017/04/07/Markdown编写笔记/markdown_title_eg.png" alt="显示效果"><br><span id="biaoti">测试锚点跳转</span>  </p>
+<h2 id="二、段落"><a href="#二、段落" class="headerlink" title="二、段落"></a>二、段落</h2><p><font color="red">语法格式：</font><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">换行：两个连续的空格后回车</div><div class="line">分割线：连续三个以上的*号、-号或_号</div><div class="line">第一行  </div><div class="line">第二行  </div><div class="line">\*号分割线  </div><div class="line">**********</div><div class="line">\-号分割线  </div><div class="line">----------</div><div class="line">\_号分割线  </div><div class="line">__________</div></pre></td></tr></table></figure></p>
+<p><font color="blue">显示效果：</font><br>&lt;不同的主题样式可能显示效果有所不同&gt;<br><img src="/2017/04/07/Markdown编写笔记/markdown_cut-offRule_eg.png" alt="显示效果">  </p>
+<h2 id="三、字体"><a href="#三、字体" class="headerlink" title="三、字体"></a>三、字体</h2><p><font color="red">语法格式：</font><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">*斜体*  </div><div class="line">_斜体_  </div><div class="line">**粗体**  </div><div class="line">***加粗斜体***  </div><div class="line">~~删除线~~</div><div class="line">`高亮`</div></pre></td></tr></table></figure></p>
+<p><font color="blue">显示效果：</font><br><em>斜体</em><br><em>斜体</em><br><strong>粗体</strong><br><strong><em>加粗斜体</em></strong><br><del>删除线</del><br><code>这是高亮的文本</code>  </p>
+<h2 id="四、列表"><a href="#四、列表" class="headerlink" title="四、列表"></a>四、列表</h2><p><font color="red">语法格式：</font><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">无序列表：</div><div class="line">    第一种以*号标识</div><div class="line">    * 项目一</div><div class="line">    * 项目二</div><div class="line">    * 项目三  </div><div class="line">    第二种以+号标识</div><div class="line">    + 项目一</div><div class="line">    + 项目二</div><div class="line">    + 项目三 </div><div class="line">    第三种以-号标识</div><div class="line">    - 项目一</div><div class="line">    - 项目二</div><div class="line">    - 项目三</div><div class="line">有序列表:  </div><div class="line">   1. 项目一</div><div class="line">   2. 项目二</div><div class="line">   3. 项目三  </div><div class="line">定义型列表：  </div><div class="line">   自定义列表名:    内容  </div><div class="line">   列表名英文冒号:    TAB加内容</div></pre></td></tr></table></figure></p>
+<p><font color="blue">显示效果：</font><br>无序列表：<br>     第一种以*号标识</p>
+<ul>
+<li>项目一</li>
+<li>项目二</li>
+<li>项目三<br>   第二种以+号标识</li>
+</ul>
+<ul>
+<li>项目一</li>
+<li>项目二</li>
+<li>项目三<br>   第三种以-号标识</li>
+</ul>
+<ul>
+<li>项目一</li>
+<li>项目二</li>
+<li>项目三<br>有序列表:  </li>
+</ul>
+<ol>
+<li>项目一</li>
+<li>项目二</li>
+<li>项目三<br>定义型列表：<br>自定义列表名:    内容<br>列表名英文冒号:    TAB加内容   </li>
+</ol>
+<h2 id="五、超链接"><a href="#五、超链接" class="headerlink" title="五、超链接"></a>五、超链接</h2><p><font color="red">语法格式：</font><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">内联：[链接文字](链接地址 &quot;链接标题相当于alt&quot;)</div><div class="line">eg： [Hexo](https://hexo.io/ &quot;Hexo标题&quot;)  </div><div class="line">引用：[链接文字][链接标记]  </div><div class="line">eg： [Hexo][1]是一个很棒的静态博客开源程序[Github][2]是一个很优秀的代码托管平台，欢迎访问我的个人站点[AinDeja&apos;Blog][3]</div><div class="line">[1]:https://hexo.io/  </div><div class="line">[2]:https://github.com/  </div><div class="line">[3]:https://aindeja.github.io/  </div><div class="line">自动：&lt;https://github.com/&gt;  </div><div class="line">锚点：  </div><div class="line">设置锚点链接对象：&lt;html标签 id=&quot;锚点ID&quot;&gt;</div><div class="line">使用锚点：[锚点名称](#锚点ID)</div></pre></td></tr></table></figure></p>
+<p><font color="blue">显示效果：</font><br>内联：<a href="https://hexo.io/" title="Hexo标题" target="_blank" rel="external">Hexo</a><br>引用：<a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>是一个很棒的静态博客开源程序<a href="https://github.com/" target="_blank" rel="external">Github</a>是一个很优秀的代码托管平台，欢迎访问我的个人站点<a href="https://aindeja.github.io/">AinDeja’Blog</a>  </p>
+<p>自动:<a href="https://github.com/" target="_blank" rel="external">https://github.com/</a><br>锚点：跳转到<a href="#biaoti">标题</a>  </p>
+<h2 id="六、代码块"><a href="#六、代码块" class="headerlink" title="六、代码块"></a>六、代码块</h2><p><font color="red">语法格式：</font><br>行内代码块：``代码``<br>代码块表示： TAB code<br>第二种表示：```code```  </p>
+<p><font color="blue">显示效果：</font><br>这是行内代码<code>code</code>在这里<br>这是tab代码块：</p>
+<pre><code>this  
+is  
+code  
+</code></pre><p>第二种表示：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">mian</span><span class="params">()</span></span>&#123;</div><div class="line"> <span class="built_in">printf</span>(<span class="string">"hello,world!"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>```后跟随相应的编程语言名可实现代码高亮</p>
+</blockquote>
+<h2 id="七、表格"><a href="#七、表格" class="headerlink" title="七、表格"></a>七、表格</h2><p><font color="red">语法格式：</font>  </p>
+<blockquote>
+<p>提示：此处的:相当于CSS中的text-align属性；:在左边是文本左对齐；:在右边是文本右对齐；两边都有表示本文居中显示(相当于text-align:center)。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">|表头1|表头2|表头3|  </div><div class="line">|:---:|:---:|:---:|  </div><div class="line">|con11|con21|con31|  </div><div class="line">|con12|con22|con32|  </div><div class="line">|con13|con23|con33|</div></pre></td></tr></table></figure>
+<p><font color="blue">显示效果：  </font></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">表头1</th>
+<th style="text-align:center">表头2</th>
+<th style="text-align:center">表头3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">con11</td>
+<td style="text-align:center">con21</td>
+<td style="text-align:center">con31</td>
+</tr>
+<tr>
+<td style="text-align:center">con12</td>
+<td style="text-align:center">con22</td>
+<td style="text-align:center">con32</td>
+</tr>
+<tr>
+<td style="text-align:center">con13</td>
+<td style="text-align:center">con23</td>
+<td style="text-align:center">con33</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+      
+        <categories>
+            
+            <category> Markdown </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Markdown </tag>
+            
+            <tag> 笔记 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[设置标签云和分类]]></title>
+      <url>/2017/04/07/%E8%AE%BE%E7%BD%AE%E6%A0%87%E7%AD%BE%E4%BA%91%E5%92%8C%E5%88%86%E7%B1%BB/</url>
+      <content type="html"><![CDATA[<h1 id="设置标签云（以yelee主题为例）"><a href="#设置标签云（以yelee主题为例）" class="headerlink" title="设置标签云（以yelee主题为例）"></a>设置标签云（以yelee主题为例）</h1><ul>
+<li>新建tags目录  </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new page tags</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<ul>
+<li>编辑新建目录下的<strong>index.md</strong>文件  </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">title: 标签云  </div><div class="line">type: &quot;tags&quot;  </div><div class="line">comments: false //禁用评论功能 防止tags页面出现评论</div></pre></td></tr></table></figure>
+<h1 id="设置分类"><a href="#设置分类" class="headerlink" title="设置分类"></a>设置分类</h1><ul>
+<li>新建tags目录  </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new page categories</div></pre></td></tr></table></figure>
+<ul>
+<li>编辑新建目录下的<strong>index.md</strong>文件  </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">title: 分类  </div><div class="line">type: &quot;categories&quot;  </div><div class="line">comments: false //禁用评论功能 防止categories页面出现评论</div></pre></td></tr></table></figure>
+<h1 id="配置站点-config-yml文件"><a href="#配置站点-config-yml文件" class="headerlink" title="配置站点_config.yml文件"></a>配置站点<strong>_config.yml</strong>文件</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">category_map: /categories</div><div class="line">tag_map: /tags</div></pre></td></tr></table></figure>]]></content>
+      
+        <categories>
+            
+            <category> HEXO </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> 配置 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[将Hexo部署到Github]]></title>
+      <url>/2017/04/06/%E5%B0%86Hexo%E9%83%A8%E7%BD%B2%E5%88%B0Github/</url>
+      <content type="html"><![CDATA[<h1 id="一、申请新的Repository"><a href="#一、申请新的Repository" class="headerlink" title="一、申请新的Repository"></a>一、申请新的Repository</h1><ul>
+<li>确保仓库名和用户名一致</li>
+<li>确保已同步ssh<a id="more"></a>
+<h1 id="二、配置本地Hexo"><a href="#二、配置本地Hexo" class="headerlink" title="二、配置本地Hexo"></a>二、配置本地Hexo</h1></li>
+<li>编辑本地Hexo根目录下的 <strong>_comfig.yml</strong>文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repository: http://github.com/YourName/YourName.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><font color="red">注意，type: repository: branch: 前面有两个空格，冒号后面都有一个空格。</font>  </p>
+<h1 id="三、部署到Github"><a href="#三、部署到Github" class="headerlink" title="三、部署到Github"></a>三、部署到Github</h1><ul>
+<li>切换到hexo根目录  </li>
+<li>执行命令  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo generate  </div><div class="line">hexo deploy</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>最后提示：<em>INFO  Deploy done: git</em>，部署成功，访问<a href="https://YourName.github.io/即可。" target="_blank" rel="external">https://YourName.github.io/即可。</a></p>
+<h3 id="报错解决"><a href="#报错解决" class="headerlink" title="报错解决"></a>报错解决</h3><p>若执行hexo命令报错，一般为SSH未成功设置，重新配置SSH即可。<br>若提示<code>ERROR Deployer not found: git</code>则表示未创建<code>hexo-deployer-git</code>依赖包。执行<code>npm install hexo-deployer-git --save</code>创建依赖包，重新部署即可。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> Hexo </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> 部署 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hexo安装教程]]></title>
+      <url>/2017/04/04/%E5%AE%89%E8%A3%85Hexo%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/</url>
+      <content type="html"><![CDATA[<h1 id="第一步：安装node-js"><a href="#第一步：安装node-js" class="headerlink" title="第一步：安装node.js"></a><strong>第一步：安装node.js</strong></h1><p>node.js下载地址：<a href="http://nodejs.cn/download/" target="_blank" rel="external">http://nodejs.cn/download/</a><br>找到自己系统对应的安装版本，下载安装。<br>安装成功后，win+r：cmd进入控制台，进行测试<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">C:\Users\Administrator&gt;node</div><div class="line">&gt;console.log(&quot;Hello,Hexo!&quot;);</div><div class="line">Hello,Hexo!</div></pre></td></tr></table></figure></p>
+<p>至此，node.js安装成功。<br><a id="more"></a></p>
+<h1 id="第二步：安装git"><a href="#第二步：安装git" class="headerlink" title="第二步：安装git"></a><strong>第二步：安装git</strong></h1><p>1、申请Github帐号：<a href="https://github.com/join?source=header-home" target="_blank" rel="external">https://github.com/join?source=header-home</a><br>2、下载并安装git：<a href="https://git-scm.com/downloads/" target="_blank" rel="external">https://git-scm.com/downloads/</a><br>3、配置ssh：  </p>
+<ul>
+<li>打开git bash，设置user.name和user.email  </li>
+<li>git config --global user.name “你的GitHub用户名”  </li>
+<li><p>git config --global user.email “你的GitHub注册邮箱”</p>
+</li>
+<li><p>生成ssh密匙</p>
+</li>
+<li>ssh-keygen -t rsa -C “你的GitHub注册邮箱”</li>
+<li>此时会在.ssh中会出现密钥文件==id_rsa==和==id_rsa.pub==</li>
+</ul>
+<p>4、将公钥添加到github上  </p>
+<ul>
+<li>用户头像→Settings→SSH and GPG keys→New SSH key→将id_rsa.pub中的内容复制到Key文本框中，然后点击Add SSH key(添加SSH)按钮。</li>
+</ul>
+<h1 id="第三步：安装Hexo"><a href="#第三步：安装Hexo" class="headerlink" title="第三步：安装Hexo"></a><strong>第三步：安装Hexo</strong></h1><ul>
+<li>更改npm源，防止默认镜像速度过慢</li>
+<li><p>npm config set registry “<a href="https://registry.npm.taobao.org" target="_blank" rel="external">https://registry.npm.taobao.org</a>“</p>
+</li>
+<li><p>执行以下命令安装hexo。</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">安装命令</div><div class="line"># 安装hexo</div><div class="line">npm install hexo-cli g</div><div class="line"># 初始化博客文件夹</div><div class="line">hexo init blog</div><div class="line"># 切换到该路径</div><div class="line">cd blog</div><div class="line"># 安装hexo的扩展插件</div><div class="line">npm install</div><div class="line"># 安装其它插件</div><div class="line">npm install hexo-server --save</div><div class="line">npm install hexo-admin --save</div><div class="line">npm install hexo-generator-archive --save</div><div class="line">npm install hexo-generator-feed --save</div><div class="line">npm install hexo-generator-search --save</div><div class="line">npm install hexo-generator-tag --save</div><div class="line">npm install hexo-deployer-git --save</div><div class="line">npm install hexo-generator-sitemap --save</div></pre></td></tr></table></figure>
+<h1 id="初探hexo"><a href="#初探hexo" class="headerlink" title="初探hexo"></a>初探hexo</h1><pre><code>第一次使用hexo，在本地创建服务器使用。
+# 生成静态页面
+hexo generate
+# 开启本地服务器
+hexo s
+</code></pre><p>打开浏览器，地址栏中输入：<a href="http://localhost:4000/,应该可以看见刚刚创建的博客了。" target="_blank" rel="external">http://localhost:4000/,应该可以看见刚刚创建的博客了。</a><br>问题：为什么访问<a href="http://localhost:4000/，无反应？" target="_blank" rel="external">http://localhost:4000/，无反应？</a><br>解决方法：可能是由于端口问题引起的。使用Ctrl+C中断本地服务，使用命令hexo s -p 5000重新开启本地服务，访问<a href="http://localhost:5000/可以看到博客页面了。" target="_blank" rel="external">http://localhost:5000/可以看到博客页面了。</a><br>将hexo博客部署到github上</p>
+]]></content>
+      
+        <categories>
+            
+            <category> Hexo </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> 安装 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+  
+  
+</search>
