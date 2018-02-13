@@ -15,17 +15,17 @@
 
 
 
-<meta name="description" content="一、申请新的Repository 确保仓库名和用户名一致 确保已同步ssh">
-<meta name="keywords" content="Hexo,部署">
+<meta name="description" content="设置标签云（以yelee主题为例） 新建tags目录    1$ hexo new page tags">
+<meta name="keywords" content="Hexo,配置">
 <meta property="og:type" content="article">
-<meta property="og:title" content="将Hexo部署到Github">
-<meta property="og:url" content="https://aindeja.github.io/2017/04/06/将Hexo部署到Github/index.html">
+<meta property="og:title" content="设置标签云和分类">
+<meta property="og:url" content="https://aindeja.github.io/2018/02/13/设置标签云和分类/index.html">
 <meta property="og:site_name" content="AinDeja‘Blog">
-<meta property="og:description" content="一、申请新的Repository 确保仓库名和用户名一致 确保已同步ssh">
-<meta property="og:updated_time" content="2017-04-07T05:01:42.035Z">
+<meta property="og:description" content="设置标签云（以yelee主题为例） 新建tags目录    1$ hexo new page tags">
+<meta property="og:updated_time" content="2017-04-07T05:43:08.884Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="将Hexo部署到Github">
-<meta name="twitter:description" content="一、申请新的Repository 确保仓库名和用户名一致 确保已同步ssh">
+<meta name="twitter:title" content="设置标签云和分类">
+<meta name="twitter:description" content="设置标签云（以yelee主题为例） 新建tags目录    1$ hexo new page tags">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -57,7 +57,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>将Hexo部署到Github | AinDeja‘Blog</title>
+<title>设置标签云和分类 | AinDeja‘Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -258,11 +258,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-将Hexo部署到Github" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-设置标签云和分类" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/04/06/将Hexo部署到Github/" class="article-date">
-      <time datetime="2017-04-06T08:28:57.664Z" itemprop="datePublished">2017-04-06</time>
+      <a href="/2018/02/13/设置标签云和分类/" class="article-date">
+      <time datetime="2018-02-13T08:44:54.550Z" itemprop="datePublished">2018-02-13</time>
 </a>
 
 
@@ -277,7 +277,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      将Hexo部署到Github
+      设置标签云和分类
     </h1>
   
 
@@ -286,13 +286,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
+    <a class="article-category-link" href="/categories/HEXO/">HEXO</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/部署/">部署</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/配置/">配置</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -302,22 +302,24 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="一、申请新的Repository"><a href="#一、申请新的Repository" class="headerlink" title="一、申请新的Repository"></a>一、申请新的Repository</h1><ul>
-<li>确保仓库名和用户名一致</li>
-<li>确保已同步ssh<a id="more"></a>
-<h1 id="二、配置本地Hexo"><a href="#二、配置本地Hexo" class="headerlink" title="二、配置本地Hexo"></a>二、配置本地Hexo</h1></li>
-<li>编辑本地Hexo根目录下的 <strong>_comfig.yml</strong>文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repository: http://github.com/YourName/YourName.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
-</li>
+        <h1 id="设置标签云（以yelee主题为例）"><a href="#设置标签云（以yelee主题为例）" class="headerlink" title="设置标签云（以yelee主题为例）"></a>设置标签云（以yelee主题为例）</h1><ul>
+<li>新建tags目录  </li>
 </ul>
-<p><font color="red">注意，type: repository: branch: 前面有两个空格，冒号后面都有一个空格。</font>  </p>
-<h1 id="三、部署到Github"><a href="#三、部署到Github" class="headerlink" title="三、部署到Github"></a>三、部署到Github</h1><ul>
-<li>切换到hexo根目录  </li>
-<li>执行命令  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo generate  </div><div class="line">hexo deploy</div></pre></td></tr></table></figure>
-</li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new page tags</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<ul>
+<li>编辑新建目录下的<strong>index.md</strong>文件  </li>
 </ul>
-<p>最后提示：<em>INFO  Deploy done: git</em>，部署成功，访问<a href="https://YourName.github.io/即可。" target="_blank" rel="external">https://YourName.github.io/即可。</a></p>
-<h3 id="报错解决"><a href="#报错解决" class="headerlink" title="报错解决"></a>报错解决</h3><p>若执行hexo命令报错，一般为SSH未成功设置，重新配置SSH即可。<br>若提示<code>ERROR Deployer not found: git</code>则表示未创建<code>hexo-deployer-git</code>依赖包。执行<code>npm install hexo-deployer-git --save</code>创建依赖包，重新部署即可。</p>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">title: 标签云  </div><div class="line">type: &quot;tags&quot;  </div><div class="line">comments: false //禁用评论功能 防止tags页面出现评论</div></pre></td></tr></table></figure>
+<h1 id="设置分类"><a href="#设置分类" class="headerlink" title="设置分类"></a>设置分类</h1><ul>
+<li>新建tags目录  </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new page categories</div></pre></td></tr></table></figure>
+<ul>
+<li>编辑新建目录下的<strong>index.md</strong>文件  </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">title: 分类  </div><div class="line">type: &quot;categories&quot;  </div><div class="line">comments: false //禁用评论功能 防止categories页面出现评论</div></pre></td></tr></table></figure>
+<h1 id="配置站点-config-yml文件"><a href="#配置站点-config-yml文件" class="headerlink" title="配置站点_config.yml文件"></a>配置站点<strong>_config.yml</strong>文件</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">category_map: /categories</div><div class="line">tag_map: /tags</div></pre></td></tr></table></figure>
       
     </div>
     
@@ -325,13 +327,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/04/06/将Hexo部署到Github/">将Hexo部署到Github</a></p>
+        <p><span>本文标题:</span><a href="/2018/02/13/设置标签云和分类/">设置标签云和分类</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">AinDeja</a></p>
-        <p><span>发布时间:</span>2017-04-06, 16:28:57</p>
-        <p><span>最后更新:</span>2017-04-07, 13:01:42</p>
+        <p><span>发布时间:</span>2018-02-13, 16:44:54</p>
+        <p><span>最后更新:</span>2017-04-07, 13:43:08</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/04/06/将Hexo部署到Github/" title="将Hexo部署到Github">https://aindeja.github.io/2017/04/06/将Hexo部署到Github/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://aindeja.github.io/2017/04/06/将Hexo部署到Github/　　作者: AinDeja" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/02/13/设置标签云和分类/" title="设置标签云和分类">https://aindeja.github.io/2018/02/13/设置标签云和分类/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://aindeja.github.io/2018/02/13/设置标签云和分类/　　作者: AinDeja" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -344,17 +346,11 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/04/04/安装Hexo详细教程/">
-                    Hexo安装教程
+                <a href="/2018/02/13/将Hexo部署到Github/">
+                    将Hexo部署到Github
                 </a>
             </div>
         
-        
-            <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/04/07/设置标签云和分类/">
-                    设置标签云和分类
-                </a>
-            </div>
         
     </nav>
 
@@ -364,7 +360,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、申请新的Repository"><span class="toc-number">1.</span> <span class="toc-text">一、申请新的Repository</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、配置本地Hexo"><span class="toc-number">2.</span> <span class="toc-text">二、配置本地Hexo</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、部署到Github"><span class="toc-number">3.</span> <span class="toc-text">三、部署到Github</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#报错解决"><span class="toc-number">3.0.1.</span> <span class="toc-text">报错解决</span></a></li></ol></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#设置标签云（以yelee主题为例）"><span class="toc-number">1.</span> <span class="toc-text">设置标签云（以yelee主题为例）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#设置分类"><span class="toc-number">2.</span> <span class="toc-text">设置分类</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#配置站点-config-yml文件"><span class="toc-number">3.</span> <span class="toc-text">配置站点_config.yml文件</span></a></li></ol>
         
     </div>
     <style>
@@ -416,7 +412,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/04/04/安装Hexo详细教程/" title="上一篇: Hexo安装教程">
+            <a href="/2018/02/13/将Hexo部署到Github/" title="上一篇: 将Hexo部署到Github">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -424,13 +420,11 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/04/07/设置标签云和分类/" title="下一篇: 设置标签云和分类">
-                <i class="fa fa-angle-right"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/04/10/软件成本估算/">软件成本估算</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/07/Markdown编写笔记/">Markdown编写笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/07/设置标签云和分类/">设置标签云和分类</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/06/将Hexo部署到Github/">将Hexo部署到Github</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/04/安装Hexo详细教程/">Hexo安装教程</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/02/13/设置标签云和分类/">设置标签云和分类</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/13/将Hexo部署到Github/">将Hexo部署到Github</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/13/安装Hexo详细教程/">Hexo安装教程</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/13/Markdown编写笔记/">Markdown编写笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/13/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/10/软件成本估算/">软件成本估算</a></li></ul>
 
 
 
@@ -444,7 +438,7 @@
         <div id="footer-info">
             <div class="footer-left">
                 <i class="fa fa-copyright"></i> 
-                2017 AinDeja
+                2017-2018 AinDeja
             </div>
             <div class="footer-right">
                 有时候深思比勤奋更重要

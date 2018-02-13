@@ -260,200 +260,11 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-软件成本估算" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/04/10/软件成本估算/" class="article-date">
-      <time datetime="2017-04-10T06:12:47.000Z" itemprop="datePublished">2017-04-10</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/10/软件成本估算/">软件成本估算</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><blockquote>
-<p>要进行成本控制，首先要进行成本估算。  </p>
-</blockquote>
-<p>&ensp;&ensp;&ensp;&ensp;估算：是指通过预测构造软件项目所需要的工作量的过程。  </p>
-<blockquote>
-<p>估算进行越早，意义越大。估算进行越晚， 精度越高。</p>
-</blockquote>
-<p>&ensp;&ensp;&ensp;&ensp;估算的基础：</p>
-<ul>
-<li>历史数据<blockquote>
-<p>在参考历史数据时需要考虑不同的环境。如编程语言，软件工具，复杂程度，标准和人员的经验。</p>
-</blockquote>
-</li>
-<li>工作度量<blockquote>
-<p>直接计算真正的成本或时间是不可能的。编写相同的程序，不同的人将有显著的区别。<br>通常将工作量表达为如源代码的数量（LOC），或者千行代码量（KLOC）；或表达为功能点数（FP）。</p>
-</blockquote>
-</li>
-<li>复杂性<blockquote>
-<p>相同KLOC的两个程序花费的时间将会不同，要根据复杂性进行修正，但是复杂性的度量通常是主观的</p>
-</blockquote>
-</li>
-</ul>
-<h1 id="软件成本估算技术"><a href="#软件成本估算技术" class="headerlink" title="软件成本估算技术"></a>软件成本估算技术</h1><p>&ensp;&ensp;&ensp;&ensp;软件规模是软件成本的主要因素，对软件规模的估计要从软件的分解开始。软件项目的设计有一个分层结构，这一分层结构就对应着工作分解结构（WBS）。如下图：<br><img src="/2017/04/10/软件成本估算/WBS.png" alt="WBS工作分解结构">  </p>
-<ul>
-<li>软件<code>规模</code>估算技术：<code>代码行（LOC）</code>、<code>功能点（FP）</code>、<code>计划评审技术（PERT）</code>。  </li>
-<li>软件<code>成本</code>估算技术：类比、自顶向下、自底向上、专家判定、算法模型。  </li>
-<li>常用成本估算模型：<code>COCOMO模型</code>、<code>COCOMOⅡ模型</code>和<code>Putnam模型</code>。  </li>
-</ul>
-<h2 id="代码行估算（LOC）"><a href="#代码行估算（LOC）" class="headerlink" title="代码行估算（LOC）"></a>代码行估算（LOC）</h2><p>&ensp;&ensp;&ensp;&ensp;代码行（LOC）估算是最基本、最简单的软件规模估算方法，应用较普遍。LOC分为<code>无注释的源代码行</code>（NCLOC）和<code>注释的源代码行</code>（CLOC）。<br>        LOC=NCLOC+CLOC  </p>
-<blockquote>
-<p>由于LOC单位比较小，在实际工作也常常使用KLOC（千代码行）来表示程序的长度。    </p>
-</blockquote>
-<h2 id="功能点方法（FP）"><a href="#功能点方法（FP）" class="headerlink" title="功能点方法（FP）"></a>功能点方法（FP）</h2><p>&ensp;&ensp;&ensp;&ensp;功能点方法（FP）是在需求分析阶段基于系统功能的一种规模估计方法，基本思想是：通过研究初始应用需求来确定各种<code>输入</code>、<code>输出</code>、<code>查询</code>、<code>外部文件</code>和<code>内部文件</code>的<code>数量</code>和<code>特性</code>，从而计算出<code>功能点</code>。<br>&ensp;&ensp;&ensp;&ensp;常用情况：<br>1.估计新的软件开发项目<br>2.应用软件包括很多输入输出或文件活动<br>3.拥有经验丰富的FP估算专家<br>4.拥有充分的数据资料，可以相当准确地将FP转化为LOC。<br>        FP=UFC*TCF</p>
-<blockquote>
-<p>UFC:未调整功能点数。TCF：技术复杂度因子<br>        UFC=功能项的加权和<br>功能项：<code>输入</code>、<code>输出</code>、<code>查询</code>、<code>外部文件</code>和<code>内部文件</code>。  </p>
-</blockquote>
-<p><img src="/2017/04/10/软件成本估算/功能项权重.png" alt="WBS工作分解结构">  </p>
-<pre><code>TCF＝0.65*0.01(SUM（Ai）)  
-</code></pre><blockquote>
-<p>TCF的取值范围为0.65~1.35，分别对应着组成部分Ai都取值0到5  </p>
-</blockquote>
-<h2 id="PERT估计"><a href="#PERT估计" class="headerlink" title="PERT估计"></a>PERT估计</h2><pre><code>E＝（A+B）／2  
-</code></pre><blockquote>
-<p>A软件可能的最低规。B软件可能的最大规模。</p>
-</blockquote>
-<h2 id="COCOMO模型"><a href="#COCOMO模型" class="headerlink" title="COCOMO模型"></a>COCOMO模型</h2><pre><code>E＝aS^b*EAF. 
-</code></pre><blockquote>
-<p>E是以人为单位的工作量。S是以KLOC计数的程序规模。EAF是一个工作量调整因子，在基本模型中取值1  </p>
-</blockquote>
-<h2 id="Putnam模型"><a href="#Putnam模型" class="headerlink" title="Putnam模型"></a>Putnam模型</h2><pre><code>S＝C×E^(1/3)×t^（4／3）
-</code></pre><blockquote>
-<p>S是以LOC为单位的源代码行数，C是技术因子，E是以人年为单位的工作量，t是以年为单位的耗费时间（直到产品交付所用的时间）。  </p>
-</blockquote>
-<pre><code>C=S/(E^(1/3)×t^（4/3）)   
-</code></pre><h1 id="赢得值分析法"><a href="#赢得值分析法" class="headerlink" title="赢得值分析法"></a>赢得值分析法</h1><blockquote>
-<p>赢得值（Earned Value，也称挣值或盈余值）分析法是一种全面衡量项目成本，进度的整体方法，以资金已经转化为项目成果的量来衡量，是一种完整和有效的项目监控指标和方法。  </p>
-</blockquote>
-<h2 id="项目预算和计划"><a href="#项目预算和计划" class="headerlink" title="项目预算和计划"></a>项目预算和计划</h2><h2 id="收集实际成本"><a href="#收集实际成本" class="headerlink" title="收集实际成本"></a>收集实际成本</h2><h2 id="计算赢得值"><a href="#计算赢得值" class="headerlink" title="计算赢得值"></a>计算赢得值</h2><h2 id="成本／进度绩效"><a href="#成本／进度绩效" class="headerlink" title="成本／进度绩效"></a>成本／进度绩效</h2><h2 id="成本／进度控制"><a href="#成本／进度控制" class="headerlink" title="成本／进度控制"></a>成本／进度控制</h2>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/软件项目管理/">软件项目管理</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/计算/">计算</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/软件成本/">软件成本</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Markdown编写笔记" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/04/07/Markdown编写笔记/" class="article-date">
-      <time datetime="2017-04-07T07:24:23.309Z" itemprop="datePublished">2017-04-07</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/07/Markdown编写笔记/">Markdown编写笔记</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h1 id="Markdown语法格式"><a href="#Markdown语法格式" class="headerlink" title="Markdown语法格式"></a>Markdown语法格式</h1><h2 id="一、标题"><a href="#一、标题" class="headerlink" title="一、标题"></a>一、标题</h2><p><font color="red">语法格式：</font><br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="section"># 一级标题</span></div><div class="line"><span class="section">## 二级标题</span></div><div class="line"><span class="section">### 三级标题</span></div><div class="line"><span class="section">#### 四级标题</span></div><div class="line"><span class="section">##### 五级标题</span></div><div class="line"><span class="section">###### 六级标题</span></div><div class="line">一级标题</div><div class="line">===========  </div><div class="line"><span class="section">二级标题</span></div><div class="line">-----------</div></pre></td></tr></table></figure></p>
-<p><font color="blue">显示效果：</font><br>&lt;不同的主题样式可能显示效果有所不同&gt;<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Markdown/">Markdown</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2017/04/07/Markdown编写笔记/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-设置标签云和分类" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/04/07/设置标签云和分类/" class="article-date">
-      <time datetime="2017-04-07T05:32:59.421Z" itemprop="datePublished">2017-04-07</time>
+      <a href="/2018/02/13/设置标签云和分类/" class="article-date">
+      <time datetime="2018-02-13T08:44:54.550Z" itemprop="datePublished">2018-02-13</time>
 </a>
 
 
@@ -468,7 +279,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/07/设置标签云和分类/">设置标签云和分类</a>
+      <a class="article-title" href="/2018/02/13/设置标签云和分类/">设置标签云和分类</a>
     </h1>
   
 
@@ -501,7 +312,7 @@
 
       
         <p class="article-more-link">
-          <a href="/2017/04/07/设置标签云和分类/#more">阅读全文 >></a>
+          <a href="/2018/02/13/设置标签云和分类/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -523,8 +334,8 @@
     <article id="post-将Hexo部署到Github" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/04/06/将Hexo部署到Github/" class="article-date">
-      <time datetime="2017-04-06T08:28:57.664Z" itemprop="datePublished">2017-04-06</time>
+      <a href="/2018/02/13/将Hexo部署到Github/" class="article-date">
+      <time datetime="2018-02-13T08:44:54.529Z" itemprop="datePublished">2018-02-13</time>
 </a>
 
 
@@ -539,7 +350,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/06/将Hexo部署到Github/">将Hexo部署到Github</a>
+      <a class="article-title" href="/2018/02/13/将Hexo部署到Github/">将Hexo部署到Github</a>
     </h1>
   
 
@@ -571,7 +382,7 @@
 
       
         <p class="article-more-link">
-          <a href="/2017/04/06/将Hexo部署到Github/#more">阅读全文 >></a>
+          <a href="/2018/02/13/将Hexo部署到Github/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -593,8 +404,8 @@
     <article id="post-安装Hexo详细教程" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/04/04/安装Hexo详细教程/" class="article-date">
-      <time datetime="2017-04-04T11:06:11.235Z" itemprop="datePublished">2017-04-04</time>
+      <a href="/2018/02/13/安装Hexo详细教程/" class="article-date">
+      <time datetime="2018-02-13T08:44:54.512Z" itemprop="datePublished">2018-02-13</time>
 </a>
 
 
@@ -609,7 +420,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/04/安装Hexo详细教程/">Hexo安装教程</a>
+      <a class="article-title" href="/2018/02/13/安装Hexo详细教程/">Hexo安装教程</a>
     </h1>
   
 
@@ -640,7 +451,218 @@
 
       
         <p class="article-more-link">
-          <a href="/2017/04/04/安装Hexo详细教程/#more">阅读全文 >></a>
+          <a href="/2018/02/13/安装Hexo详细教程/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Markdown编写笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/02/13/Markdown编写笔记/" class="article-date">
+      <time datetime="2018-02-13T08:44:54.497Z" itemprop="datePublished">2018-02-13</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/02/13/Markdown编写笔记/">Markdown编写笔记</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h1 id="Markdown语法格式"><a href="#Markdown语法格式" class="headerlink" title="Markdown语法格式"></a>Markdown语法格式</h1><h2 id="一、标题"><a href="#一、标题" class="headerlink" title="一、标题"></a>一、标题</h2><p><font color="red">语法格式：</font><br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="section"># 一级标题</span></div><div class="line"><span class="section">## 二级标题</span></div><div class="line"><span class="section">### 三级标题</span></div><div class="line"><span class="section">#### 四级标题</span></div><div class="line"><span class="section">##### 五级标题</span></div><div class="line"><span class="section">###### 六级标题</span></div><div class="line">一级标题</div><div class="line">===========  </div><div class="line"><span class="section">二级标题</span></div><div class="line">-----------</div></pre></td></tr></table></figure></p>
+<p><font color="blue">显示效果：</font><br>&lt;不同的主题样式可能显示效果有所不同&gt;<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Markdown/">Markdown</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2018/02/13/Markdown编写笔记/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/02/13/hello-world/" class="article-date">
+      <time datetime="2018-02-13T08:38:35.298Z" itemprop="datePublished">2018-02-13</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/02/13/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-软件成本估算" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/04/10/软件成本估算/" class="article-date">
+      <time datetime="2017-04-10T06:12:47.000Z" itemprop="datePublished">2017-04-10</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/10/软件成本估算/">软件成本估算</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><blockquote>
+<p>要进行成本控制，首先要进行成本估算。  </p>
+</blockquote>
+<p>&ensp;&ensp;&ensp;&ensp;估算：是指通过预测构造软件项目所需要的工作量的过程。  </p>
+<blockquote>
+<p>估算进行越早，意义越大。估算进行越晚， 精度越高。</p>
+</blockquote>
+<p>&ensp;&ensp;&ensp;&ensp;估算的基础：</p>
+<ul>
+<li>历史数据<blockquote>
+<p>在参考历史数据时需要考虑不同的环境。如编程语言，软件工具，复杂程度，标准和人员的经验。</p></blockquote></li></ul>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/软件项目管理/">软件项目管理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/计算/">计算</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/软件成本/">软件成本</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2017/04/10/软件成本估算/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -666,7 +688,7 @@
         <div id="footer-info">
             <div class="footer-left">
                 <i class="fa fa-copyright"></i> 
-                2017 AinDeja
+                2017-2018 AinDeja
             </div>
             <div class="footer-right">
                 有时候深思比勤奋更重要
